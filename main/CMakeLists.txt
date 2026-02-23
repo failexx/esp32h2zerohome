@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "ble-bridge.c"
+        "zigbee.c"
+        "commands.c"
+    INCLUDE_DIRS
+        "."
+        "../managed_components/espressif__esp-zigbee-lib/include"
+        "../managed_components/espressif__esp-zboss-lib/include"
+    PRIV_REQUIRES
+        bt
+)
