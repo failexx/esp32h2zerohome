@@ -40,3 +40,14 @@ This project is a Zigbee and BLE bridge developed using the [Espressif IoT Devel
 ## Dependencies
 - [ESP-IDF](https://github.com/espressif/esp-idf)
 - [ESP-Zigbee Library](https://github.com/espressif/esp-zigbee-lib)
+
+## Credits
+
+This project makes use of the following libraries and frameworks:
+
+- **[ESP-IDF](https://github.com/espressif/esp-idf)**: The official IoT Development Framework from Espressif Systems, providing core functionality for ESP32 devices.
+- **[ESP-Zigbee Library](https://github.com/espressif/esp-zigbee-lib)**: A library for Zigbee communication, developed by Espressif Systems.
+- **[Apache NimBLE](https://github.com/apache/mynewt-nimble)**: A lightweight Bluetooth Low Energy (BLE) stack used for BLE communication.
+- **[FreeRTOS](https://www.freertos.org/)**: A real-time operating system for embedded devices, used for task scheduling and management.
+
+Special thanks to the open-source community for providing these tools and frameworks.
