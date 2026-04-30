@@ -11,9 +11,6 @@ extern "C" {
 
 void commands_init(void);
 
-// If you want to keep text commands:
-bool commands_handle(const char *cmd, uint16_t len);
-
 // Hex commands from BLE
 bool commands_handle_hex(const uint8_t *data, uint16_t len);
 

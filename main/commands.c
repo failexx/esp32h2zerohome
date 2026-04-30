@@ -13,13 +13,6 @@ void commands_init(void)
     ESP_LOGI(TAG, "commands_init() called");
 }
 
-// Handle text commands
-bool commands_handle(const char *cmd, uint16_t len)
-{
-    ESP_LOGI(TAG, "Handling text command: %.*s", len, cmd);
-    return true;
-}
-
 // Handle hex commands from BLE
 bool commands_handle_hex(const uint8_t *data, uint16_t len)
 {

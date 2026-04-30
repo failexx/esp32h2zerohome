@@ -1,65 +1,65 @@
-BLE HEX-INSTRUKTIONER (Felix Home)
-===================================
+BLE HEX INSTRUCTIONS (Felix Home)
+==================================
 
-VIKTIGT
--------
-- BLE-kommandon skickas som RÅA BYTES (hex), inte text.
+IMPORTANT
+---------
+- BLE commands are sent as RAW BYTES (hex), not text.
 - Characteristic: service 0xFFF0, write characteristic 0xFFF1.
 - Byte 0 = lamp_id
 - Byte 1 = cmd
 
 Format
 ------
-[ lamp_id ][ cmd ][ ev. data ... ]
+[ lamp_id ][ cmd ][ optional data ... ]
 
-Stödda kommandon
-----------------
+Supported commands
+------------------
 1) OFF
    cmd = 0x00
-   Längd = 2 bytes
-   Exempel:
-   - Lampa 1 OFF: 01 00
+   Length = 2 bytes
+   Example:
+   - Lamp 1 OFF: 01 00
 
 2) ON
    cmd = 0x01
-   Längd = 2 bytes
-   Exempel:
-   - Lampa 1 ON: 01 01
+   Length = 2 bytes
+   Example:
+   - Lamp 1 ON: 01 01
 
 3) BRIGHTNESS
    cmd = 0x02
-   Längd = 3 bytes
+   Length = 3 bytes
    Byte 2 = level (0..255)
-   Exempel:
-   - Lampa 1 brightness 128: 01 02 80
+   Example:
+   - Lamp 1 brightness 128: 01 02 80
 
 4) COLOR RGB
    cmd = 0x03
-   Längd = 5 bytes
+   Length = 5 bytes
    Byte 2 = R, Byte 3 = G, Byte 4 = B (0..255)
-   Exempel:
-   - Lampa 1 röd:  01 03 FF 00 00
-   - Lampa 1 grön: 01 03 00 FF 00
+   Example:
+   - Lamp 1 red:   01 03 FF 00 00
+   - Lamp 1 green: 01 03 00 FF 00
 
-Lamp-ID
+Lamp ID
 -------
 - lamp_id = 0x01 -> Lamp 1
-- Endast en lampa stöds nu: lamp_id 0x01
+- Only one lamp is supported currently: lamp_id 0x01
 
-Felsökning
-----------
-- Om du ser "not marked as joined" i loggen:
-  lampan har ännu inte joinat Zigbee-nätet.
-- Kontrollera att lampan är i pairing-läge och att noderna loggar "device joined".
+Troubleshooting
+---------------
+- If you see "not marked as joined" in the log:
+  the lamp has not joined the Zigbee network yet.
+- Check that the lamp is in pairing mode and that nodes log "device joined".
 
-Snabbtest-sekvens
------------------
-1) Tänd lampa 1:         01 01
-2) Sätt brightness 50%:  01 02 80
-3) Sätt färg till varm:  01 03 FF A0 40
-4) Släck lampa 1:        01 00
+Quick test sequence
+-------------------
+1) Turn lamp 1 on:         01 01
+2) Set brightness 50%:     01 02 80
+3) Set warm color:         01 03 FF A0 40
+4) Turn lamp 1 off:        01 00
 
-Tips i BLE-app (t.ex. nRF Connect)
+Tips for BLE apps (e.g. nRF Connect)
 -----------------------------------
-- Välj Write/Write Without Response för 0xFFF1.
-- Mata in payload som HEX-bytes (inte ASCII-sträng).
+- Use Write / Write Without Response for 0xFFF1.
+- Enter payload as HEX bytes (not an ASCII string).
