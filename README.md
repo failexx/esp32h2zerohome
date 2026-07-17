@@ -21,7 +21,7 @@ This project is built with the [Espressif IoT Development Framework (ESP-IDF)](h
 ## Setup Instructions
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/failexx/esp32-zigbee-ble-bridge.git
    ```
 2. Install the [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32h2/get-started/index.html) development environment.
 3. Set the target and configure the project:
